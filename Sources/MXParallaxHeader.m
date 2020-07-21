@@ -125,17 +125,7 @@ static void * const kMXParallaxHeaderKVOContext = (void*)&kMXParallaxHeaderKVOCo
     }
 }
 
-- (void)layoutContentView {
-    CGRect frame = (CGRect){
-        .origin.x       = 0,
-        .origin.y       = -self.height,
-        .size.width     = self.scrollView.frame.size.width,
-        .size.height    = self.height
-    };
-    self.contentView.frame = frame;
-    CGFloat div = self.height - self.minimumHeight;
-    self.progress = (self.contentView.frame.size.height - self.minimumHeight) / (div? : self.height);
-}
+
 
 - (void)setProgress:(CGFloat)progress {
     if(_progress != progress) {
@@ -240,15 +230,25 @@ static void * const kMXParallaxHeaderKVOContext = (void*)&kMXParallaxHeaderKVOCo
 #pragma mark Private Methods
 
 - (void)layoutContentView {
-    CGFloat minimumHeight = MIN(self.minimumHeight, self.height);
-    CGFloat relativeYOffset = self.scrollView.contentOffset.y + self.scrollView.contentInset.top - self.height;
-    CGFloat relativeHeight  = -relativeYOffset;
-
-    self.positionConstraint.constant = relativeYOffset;
-    self.heightConstraint.constant = MAX(relativeHeight, minimumHeight);
-
-    [self.contentView layoutSubviews];
-
+//    CGFloat minimumHeight = MIN(self.minimumHeight, self.height);
+//    CGFloat relativeYOffset = self.scrollView.contentOffset.y + self.scrollView.contentInset.top - self.height;
+//    CGFloat relativeHeight  = -relativeYOffset;
+//
+//    self.positionConstraint.constant = relativeYOffset;
+//    self.heightConstraint.constant = MAX(relativeHeight, minimumHeight);
+//
+//    [self.contentView layoutSubviews];
+//
+//    CGFloat div = self.height - self.minimumHeight;
+//    self.progress = (self.contentView.frame.size.height - self.minimumHeight) / (div? : self.height);
+    
+    CGRect frame = (CGRect){
+        .origin.x       = 0,
+        .origin.y       = -self.height,
+        .size.width     = self.scrollView.frame.size.width,
+        .size.height    = self.height
+    };
+    self.contentView.frame = frame;
     CGFloat div = self.height - self.minimumHeight;
     self.progress = (self.contentView.frame.size.height - self.minimumHeight) / (div? : self.height);
 }
