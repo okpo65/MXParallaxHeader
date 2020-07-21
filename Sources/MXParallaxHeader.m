@@ -125,6 +125,18 @@ static void * const kMXParallaxHeaderKVOContext = (void*)&kMXParallaxHeaderKVOCo
     }
 }
 
+- (void)layoutContentView {
+    CGRect frame = (CGRect){
+        .origin.x       = 0,
+        .origin.y       = -self.height,
+        .size.width     = self.scrollView.frame.size.width,
+        .size.height    = self.height
+    };
+    self.contentView.frame = frame;
+    CGFloat div = self.height - self.minimumHeight;
+    self.progress = (self.contentView.frame.size.height - self.minimumHeight) / (div? : self.height);
+}
+
 - (void)setProgress:(CGFloat)progress {
     if(_progress != progress) {
         _progress = progress;
