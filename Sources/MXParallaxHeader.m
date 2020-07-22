@@ -190,7 +190,7 @@ static void * const kMXParallaxHeaderKVOContext = (void*)&kMXParallaxHeaderKVOCo
 - (void)setFillModeConstraints {
     [self.view.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor].active = YES;
     [self.view.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor].active = YES;
-    [self.view.topAnchor constraintEqualToAnchor:self.contentView.topAnchor].active = YES;
+    [self.contentView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
     [self.view.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor].active = YES;
 }
 
@@ -223,32 +223,24 @@ static void * const kMXParallaxHeaderKVOContext = (void*)&kMXParallaxHeaderKVOCo
     [self.contentView.leadingAnchor constraintEqualToAnchor:self.scrollView.leadingAnchor].active = YES;
     [self.contentView.trailingAnchor constraintEqualToAnchor:self.scrollView.trailingAnchor].active = YES;
 
-    self.positionConstraint = [self.contentView.topAnchor constraintEqualToAnchor:self.scrollView.topAnchor];
+    CGFloat relativeYOffset = self.scrollView.contentOffset.y + self.scrollView.contentInset.top - self.height;
+    self.positionConstraint = [self.contentView.topAnchor constraintEqualToAnchor:self.scrollView.topAnchor constant: relativeYOffset + self.height];
     self.positionConstraint.active = YES;
 }
 
 #pragma mark Private Methods
 
 - (void)layoutContentView {
-//    CGFloat minimumHeight = MIN(self.minimumHeight, self.height);
-//    CGFloat relativeYOffset = self.scrollView.contentOffset.y + self.scrollView.contentInset.top - self.height;
-//    CGFloat relativeHeight  = -relativeYOffset;
-//
-//    self.positionConstraint.constant = relativeYOffset;
-//    self.heightConstraint.constant = MAX(relativeHeight, minimumHeight);
-//
-//    [self.contentView layoutSubviews];
-//
-//    CGFloat div = self.height - self.minimumHeight;
-//    self.progress = (self.contentView.frame.size.height - self.minimumHeight) / (div? : self.height);
+    CGFloat relativeYOffset = self.scrollView.contentOffset.y + self.scrollView.contentInset.top - self.height;
+    CGFloat relativeHeight  = -relativeYOffset;
+    CGRect statusBarRect = [UIApplication sharedApplication].statusBarFrame;
+    CGFloat statusBarHeight = statusBarRect.size.height;
     
-    CGRect frame = (CGRect){
-        .origin.x       = 0,
-        .origin.y       = -self.height,
-        .size.width     = self.scrollView.frame.size.width,
-        .size.height    = self.height
-    };
-    self.contentView.frame = frame;
+    // remove parallax effect in headerView
+    if (self.height + statusBarHeight <= relativeHeight) {
+       self.positionConstraint.constant = relativeYOffset;
+    }
+    self.heightConstraint.constant = MAX(relativeHeight, self.height + statusBarHeight);
     CGFloat div = self.height - self.minimumHeight;
     self.progress = (self.contentView.frame.size.height - self.minimumHeight) / (div? : self.height);
 }

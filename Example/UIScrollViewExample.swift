@@ -34,13 +34,14 @@ class UIScrollViewExample: UITableViewController, MXParallaxHeaderDelegate {
         tableView.parallaxHeader.view = headerView // You can set the parallax header view from the floating view
         tableView.parallaxHeader.height = 300
         tableView.parallaxHeader.mode = .fill
+        
         tableView.parallaxHeader.delegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        tableView.parallaxHeader.minimumHeight = view.safeAreaInsets.top
+        tableView.parallaxHeader.minimumHeight = 0//view.safeAreaInsets.top
     }
     
     // MARK: - Table view data source

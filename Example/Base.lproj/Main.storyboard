@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gJ1-TG-u0D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gJ1-TG-u0D">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--UIScrollView-->
         <scene sceneID="GQm-lk-xcZ">
             <objects>
-                <tableViewController id="5wP-tC-L4h" customClass="UIScrollViewExample" customModule="MXParallaxHeader_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5wP-tC-L4h" customClass="UIScrollViewExample" customModule="MXParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="rFe-ya-cfR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +112,7 @@
         <!--MXScrollView-->
         <scene sceneID="Wus-Wb-PlD">
             <objects>
-                <viewController restorationIdentifier="MXScrollView" id="ft2-aT-thd" customClass="MXScrollViewExample" customModule="MXParallaxHeader_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MXScrollView" id="ft2-aT-thd" customClass="MXScrollViewExample" customModule="MXParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vbU-g6-y3Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +192,7 @@
         <!--Web View Controller-->
         <scene sceneID="e88-UT-JKL">
             <objects>
-                <viewController id="erx-Ha-mfa" customClass="MXWebViewController" customModule="MXParallaxHeader_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="erx-Ha-mfa" customClass="MXWebViewController" customModule="MXParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vPo-vc-HEb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +246,7 @@
         <!--Falcon View Controller-->
         <scene sceneID="ROx-wQ-jV4">
             <objects>
-                <viewController id="c12-C7-n3f" customClass="MXFalconViewController" customModule="MXParallaxHeader_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c12-C7-n3f" customClass="MXFalconViewController" customModule="MXParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gU8-90-gva">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
