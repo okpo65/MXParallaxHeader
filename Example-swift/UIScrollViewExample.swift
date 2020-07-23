@@ -35,8 +35,18 @@ class UIScrollViewExample: UITableViewController, MXParallaxHeaderDelegate {
         tableView.parallaxHeader.height = 300
         tableView.parallaxHeader.mode = .fill
         tableView.parallaxHeader.delegate = self
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.layer.zPosition = 100
+        refreshControl.translatesAutoresizingMaskIntoConstraints = false
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+        NSLayoutConstraint(item: refreshControl, attribute: .top, relatedBy: .equal, toItem: headerView, attribute: .top, multiplier: 1.0, constant: -20).isActive = true
+        NSLayoutConstraint(item: refreshControl, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
     }
-
+    @objc func refresh(_ sender: UIRefreshControl) {
+        sender.endRefreshing()
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

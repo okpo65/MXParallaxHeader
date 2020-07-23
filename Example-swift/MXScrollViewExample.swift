@@ -55,7 +55,7 @@ class MXScrollViewExample: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        scrollView.parallaxHeader.minimumHeight = view.safeAreaInsets.top
+        scrollView.parallaxHeader.minimumHeight = view.safeAreaInsets.top + 100
     }
     
     override func viewDidLayoutSubviews() {
