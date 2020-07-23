@@ -74,6 +74,7 @@ class UIScrollViewExample: UITableViewController, MXParallaxHeaderDelegate {
     // MARK: - Parallax header delegate
     
     func parallaxHeaderDidScroll(_ parallaxHeader: MXParallaxHeader) {
+    
         NSLog("progress %f", parallaxHeader.progress)
     }
 }

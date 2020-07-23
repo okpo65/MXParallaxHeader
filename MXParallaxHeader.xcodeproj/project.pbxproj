@@ -26,7 +26,7 @@
 		9C01BCBC1DA3E7480032494C /* MXParallaxHeader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C01BC6F1DA3E4D40032494C /* MXParallaxHeader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C01BCC31DA3E7900032494C /* StarshipHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C01BCC11DA3E7900032494C /* StarshipHeader.xib */; };
 		9C01BCCB1DA3E9A80032494C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C01BCCA1DA3E9A80032494C /* AppDelegate.swift */; };
-		9C01BCD01DA3E9A80032494C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C01BCCE1DA3E9A80032494C /* Main.storyboard */; };
+		9C01BCD01DA3E9A80032494C /* Main.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C01BCCE1DA3E9A80032494C /* Main.Storyboard */; };
 		9C01BCD21DA3E9A80032494C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C01BCD11DA3E9A80032494C /* Assets.xcassets */; };
 		9C01BCD51DA3E9A80032494C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C01BCD31DA3E9A80032494C /* LaunchScreen.storyboard */; };
 		9C01BCE41DA3EBBA0032494C /* StarshipHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C01BCDE1DA3EBBA0032494C /* StarshipHeader.xib */; };
@@ -110,7 +110,7 @@
 		9C01BCC11DA3E7900032494C /* StarshipHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StarshipHeader.xib; path = ../UIScrollView/StarshipHeader.xib; sourceTree = "<group>"; };
 		9C01BCC81DA3E9A80032494C /* MXParallaxHeader-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MXParallaxHeader-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C01BCCA1DA3E9A80032494C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C01BCCF1DA3E9A80032494C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C01BCCF1DA3E9A80032494C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.Storyboard; sourceTree = "<group>"; };
 		9C01BCD11DA3E9A80032494C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C01BCD41DA3E9A80032494C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C01BCD61DA3E9A80032494C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 				9C01BCDF1DA3EBBA0032494C /* MXScrollViewExample.swift */,
 				9C7904281DC242A800149A7E /* MXFalconViewController.swift */,
 				9C01BCE01DA3EBBA0032494C /* MXWebViewController.swift */,
-				9C01BCCE1DA3E9A80032494C /* Main.storyboard */,
+				9C01BCCE1DA3E9A80032494C /* Main.Storyboard */,
 				9C01BCDE1DA3EBBA0032494C /* StarshipHeader.xib */,
 				9C01BCD11DA3E9A80032494C /* Assets.xcassets */,
 				9C01BCD31DA3E9A80032494C /* LaunchScreen.storyboard */,
@@ -441,7 +441,7 @@
 				9C01BCD51DA3E9A80032494C /* LaunchScreen.storyboard in Resources */,
 				9C01BCD21DA3E9A80032494C /* Assets.xcassets in Resources */,
 				9C01BCE41DA3EBBA0032494C /* StarshipHeader.xib in Resources */,
-				9C01BCD01DA3E9A80032494C /* Main.storyboard in Resources */,
+				9C01BCD01DA3E9A80032494C /* Main.Storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,12 +515,12 @@
 			name = "Launch Screen.storyboard";
 			sourceTree = "<group>";
 		};
-		9C01BCCE1DA3E9A80032494C /* Main.storyboard */ = {
+		9C01BCCE1DA3E9A80032494C /* Main.Storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9C01BCCF1DA3E9A80032494C /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main.Storyboard;
 			sourceTree = "<group>";
 		};
 		9C01BCD31DA3E9A80032494C /* LaunchScreen.storyboard */ = {
