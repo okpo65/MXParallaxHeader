@@ -228,9 +228,9 @@ static void * const kMXParallaxHeaderKVOContext = (void*)&kMXParallaxHeaderKVOCo
     
     CGRect frame = (CGRect){
         .origin.x       = 0,
-        .origin.y       = -300,//self.height + statusBarHeight <= relativeHeight ? relativeYOffset : -self.height - statusBarHeight,
+        .origin.y       = -self.height,//self.height + statusBarHeight <= relativeHeight ? relativeYOffset : -self.height - statusBarHeight,
         .size.width     = self.scrollView.frame.size.width ,
-        .size.height    = 300//MAX(self.height + statusBarHeight,relativeHeight)
+        .size.height    = self.height//MAX(self.height + statusBarHeight,relativeHeight)
     };
     self.contentView.frame = frame;
     CGFloat div = self.height - self.minimumHeight;
