@@ -212,16 +212,27 @@ static void * const kMXParallaxHeaderKVOContext = (void*)&kMXParallaxHeaderKVOCo
     CGFloat minimumHeight = MIN(self.minimumHeight, self.height);
     CGFloat relativeYOffset = self.scrollView.contentOffset.y + self.scrollView.contentInset.top - self.height;
     CGFloat relativeHeight  = -relativeYOffset;
+    CGRect statusBarRect = [UIApplication sharedApplication].statusBarFrame;
+    CGFloat statusBarHeight = statusBarRect.size.height;
+//    CGRect frame = (CGRect){
+//        .origin.x       = 0,
+//        .origin.y       = relativeYOffset,
+//        .size.width     = self.scrollView.frame.size.width,
+//        .size.height    = MAX(relativeHeight, minimumHeight)
+//    };
+//
+//    self.contentView.frame = frame;
+//
+//    CGFloat div = self.height - self.minimumHeight;
+//    self.progress = (self.contentView.frame.size.height - self.minimumHeight) / (div? : self.height);
     
     CGRect frame = (CGRect){
         .origin.x       = 0,
-        .origin.y       = relativeYOffset,
-        .size.width     = self.scrollView.frame.size.width,
-        .size.height    = MAX(relativeHeight, minimumHeight)
+        .origin.y       = self.height + statusBarHeight <= relativeHeight ? relativeYOffset : -self.height - statusBarHeight,
+        .size.width     = self.scrollView.frame.size.width ,
+        .size.height    = MAX(self.height + statusBarHeight,relativeHeight)
     };
-    
     self.contentView.frame = frame;
-    
     CGFloat div = self.height - self.minimumHeight;
     self.progress = (self.contentView.frame.size.height - self.minimumHeight) / (div? : self.height);
 }
