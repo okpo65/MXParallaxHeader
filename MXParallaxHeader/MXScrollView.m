@@ -187,8 +187,10 @@ static void * const kMXScrollViewKVOContext = (void*)&kMXScrollViewKVOContext;
             } else if (self.contentOffset.y > -self.parallaxHeader.minimumHeight) {
                 printf("what!! %f", self.contentOffset.y,self.parallaxHeader.minimumHeight);
                 [self scrollView:self setContentOffset:CGPointMake(self.contentOffset.x, -self.parallaxHeader.minimumHeight)];
+            } else {
+                [self scrollView:self setContentOffset:CGPointMake(self.contentOffset.x, -self.parallaxHeader.minimumHeight)];
             }
-            
+             
         } else {
             //Adjust the observed scrollview's content offset
             UIScrollView *scrollView = object;
