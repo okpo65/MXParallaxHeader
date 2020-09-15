@@ -44,11 +44,13 @@ class MXScrollViewExample: UIViewController, UITableViewDelegate, UITableViewDat
         table1 = UITableView()
         table1.dataSource = self;
         table1.backgroundColor = SpanichWhite
+        table1.register(UINib(nibName: "tempTableViewCell", bundle: nil), forCellReuseIdentifier: "tempTableViewCell")
         scrollView.addSubview(table1)
         
         table2 = UITableView()
         table2.dataSource = self;
         table2.backgroundColor = SpanichWhite
+        table2.register(UINib(nibName: "tempTableViewCell", bundle: nil), forCellReuseIdentifier: "tempTableViewCell")
         scrollView.addSubview(table2)
     }
 
@@ -83,13 +85,13 @@ class MXScrollViewExample: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let CellIdentifier = "Cell"
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier)
-        if (cell == nil) {
-            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: CellIdentifier)
-        }
-        cell!.textLabel!.text = String(format: "Row %ld", indexPath.row * 10)
-        cell!.backgroundColor = SpanichWhite;
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tempTableViewCell", for: indexPath) as! tempTableViewCell
+//        if (cell == nil) {
+//            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: CellIdentifier)
+//        }
+//        cell!.textLabel!.text = String(format: "Row %ld", indexPath.row * 10)
+//        cell!.backgroundColor = SpanichWhite;
+        return cell
     }
     
     // MARK: - Scroll view delegate
